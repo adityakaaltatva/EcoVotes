@@ -1,0 +1,10 @@
+coco Adder
+
+state persistent:
+		value U64
+
+endpoint deployer Init!(value U64):
+		mutate value -> Adder.State.value
+
+endpoint invokable LogicAddress() -> (addr Address):
+		yield addr Address(Adder)
